@@ -1,0 +1,31 @@
+## Architecture Diagram
+
+Below is a diagram of an example e-commerce analytics pipeline. I created this diagram to demonstrate my understanding of how data flows from source systems to executive dashboards.
+
+![Data Pipeline Architecture Diagram](./Architecture Diagram - E-commerce Analytics Pipeline.png)
+
+### Diagram Legend
+
+| Color | Layer | Purpose |
+|-------|-------|---------|
+| Blue | Source Systems | Where raw data originates |
+| Green | Ingestion | Scheduled extraction of data |
+| Yellow | Raw Storage | Immutable staging area |
+| Orange | Transformation | Cleaning and business logic |
+| Purple | Warehouse & BI | Reporting and visualization |
+| Red | Monitoring | Monitor for success or failure |
+
+### Tools Represented
+
+- PostgreSQL – Transactional database
+- Google Analytics – Web analytics
+- Facebook Ads – Marketing data
+- Azure Data Factory – Orchestration
+- Azure Blob Storage – Raw storage
+- Azure Synapse / dbt – Transformation
+- Snowflake – Data warehouse
+- Power BI – Dashboards
+
+### What This Diagram Shows
+
+This pipeline extracts data daily from three source systems, stages it in blob storage, transforms it using SQL-based logic, loads it into Snowflake, and finally refreshes a Power BI dashboard for executives. The entire process is orchestrated by Azure Data Factory and monitored for failures.
